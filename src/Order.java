@@ -1,6 +1,18 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 public class Order {
+    private List<Beverage>  listBeverages= new ArrayList<Beverage>();
+
+    public List<Beverage> getListBeverages() { return listBeverages; }
+    public void setListBeverages(List<Beverage> listBeverages) { this.listBeverages = listBeverages; }
+
+
+
+
+
+
     public static void main(String[]args){
 
     System.out.println("    \t     Welcome at Claudia´s Cafeteria" + "\nOur mission is give you a piece of happiness to start well your day. ");
@@ -29,8 +41,7 @@ public class Order {
 
                 );
 
-
-
+        
 
         //Questions to order....
         Scanner sc= new Scanner(System.in);
@@ -38,21 +49,16 @@ public class Order {
         Boolean readyToOrder= sc.nextBoolean();
 
         if(readyToOrder) {
-            System.out.println("Please, enter how many Beverage would you like?");
-            Integer amount = sc.nextInt();
+            System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: Coffee,  Tea or Frapuccino.");
+            String kindOfBeverage = sc.next();
             sc.reset();
 
-            System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: 1 to Coffe, 2 to Tea or 3 to Frapuccino.");
-            Integer kindOfBeverage = sc.nextInt();
-            sc.reset();
-
-            System.out.println("Would you like cream in you beverage(s)?  \t(Please enter true if is YES, or false if is NO)");
-            Boolean addCream = sc.nextBoolean();
 
         } else {
             System.out.println("Ok, maybe you can order later. See you soon!.");
 
         }
+
 
     }
 }
