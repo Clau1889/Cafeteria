@@ -1,14 +1,18 @@
-import java.lang.reflect.Array;
-import java.util.List;
-
 public class Beverage extends Order{
     private String nameBeverage;
     private Size sizeBeverage;
     private Double priceBeverage;
+    private Boolean withMilk;
+    private TypeMilk typeMilk;
+
 
     //ENUM TO SIZES, BECAUSE ALWAYS ARE GOING TO BE THE SAME FOR BEVERAGE.
-    enum Size {
+    public enum Size {
         SMALL, MEDIUM, LARGE;
+    }
+
+    public enum TypeMilk{
+        WHOLE, LIGHT, SOJA
     }
 
 
@@ -56,11 +60,13 @@ public class Beverage extends Order{
         }
     }
 
-    
+
 
 
     public Double getPriceBeverage() { return priceBeverage; }
-    public void setPriceBeverage(Double priceBeverage) { this.priceBeverage = priceBeverage;
+    public void setPriceBeverage(Double priceBeverage) {
+        this.priceBeverage = priceBeverage;
+
         for(Size sizes: Size.values()){
 
             if(sizes.equals(Size.SMALL)){
@@ -76,4 +82,45 @@ public class Beverage extends Order{
     }
 
 
+    public Boolean getWithMilk() { return withMilk;  }
+    public void setWithMilk(Boolean withMilk) { this.withMilk = withMilk; }
+
+    public TypeMilk getTypeMilk() { return typeMilk; }
+    public void setTypeMilk(TypeMilk typeMilk) {
+        switch (typeMilk){
+            case WHOLE:
+                this.typeMilk= typeMilk;
+                break;
+
+            case LIGHT:
+                this.typeMilk= typeMilk;
+                break;
+
+            case SOJA:
+                this.typeMilk= typeMilk;
+                break;
+
+            default:
+                this.typeMilk= null;
+        }
+    }
+
+
+
+    @Override
+    public String toString(){
+        return "Name: " + nameBeverage + "\nSize: " + sizeBeverage + "\nPriceSize: " + priceBeverage;
+    }
+
+
+
+    public Beverage(){}
+
+    public Beverage(String nameBeverage, Size sizeBeverage, Boolean withMilk, TypeMilk typeMilk, Double priceBeverage  ){
+        this.nameBeverage= nameBeverage;
+        this.sizeBeverage= sizeBeverage;
+        this.withMilk= withMilk;
+        this.typeMilk= typeMilk;
+        this.priceBeverage= priceBeverage;
+    }
 }
