@@ -3,13 +3,18 @@ import java.util.Scanner;
 import java.util.List;
 
 public class Order {
-    private List<Beverage> listBeverages= new ArrayList<Beverage>();
+    private static List<Beverage> listBeverages= new ArrayList<Beverage>();
 
     public List<Beverage> getListBeverages() { return listBeverages; }
     public void setListBeverages(List<Beverage> listBeverages) { this.listBeverages = listBeverages; }
 
+    public void printListOrder(){
 
+        for(Beverage listOrder: getListBeverages()){
+            System.out.println(listOrder.toString());
+        }
 
+    }
 
     public static void main(String[]args){
 
@@ -40,10 +45,8 @@ public class Order {
                 );
 
 
-
+        Order order = new Order();
         Beverage beverage= new Beverage();
-        //Coffee coffee= new Coffee("Coffe", Beverage.Size.MEDIUM, true, Coffee.TypeMilk.WHOLE, Coffee.Type.AMERICANO, true);
-        //Tea tea= new Tea("Tea", Beverage.Size.LARGE, false, null, Tea.TypeTea.GREEEN);
         Coffee coffee= new Coffee();
         Tea tea= new Tea();
         Frapuccino frapuccino= new Frapuccino();
@@ -55,13 +58,10 @@ public class Order {
         Boolean readyToOrder= sc.nextBoolean();
 
 
-
         if(readyToOrder) {
             System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: Coffee,  Tea or Frapuccino.");
             String kindOfBeverage = sc.next().toLowerCase();
             beverage.setNameBeverage(kindOfBeverage);
-            sc.reset();
-
 
             /**********************************************************************
              *                            COFEE                                   *
@@ -104,7 +104,7 @@ public class Order {
                             coffee.setPriceBeverage(55.00);
                         }
 
-                    System.out.println(coffee);
+                    listBeverages.add(coffee);
 
                 }else{
                     System.out.println("Sorry, this kind of Coffee is unavailable.");
@@ -151,7 +151,7 @@ public class Order {
                             tea.setPriceBeverage(38.00);
                         }
 
-                    System.out.println(tea);
+                    listBeverages.add(tea);
 
                 }else {
                     System.out.println("Sorry, this kind of Tea is unavailable.");
@@ -203,7 +203,7 @@ public class Order {
                         frapuccino.setPriceBeverage(63.00);
                     }
 
-                    System.out.println(frapuccino);
+                    listBeverages.add(frapuccino);
 
                 }else {
                     System.out.println("Sorry, this kind of Frapuccino is unavailable.");
@@ -217,6 +217,11 @@ public class Order {
             }
 
 
+
+
+
+
+
         //CLIENT IS NOT READY TO ORDER A BEVERAGE
         } else {
             System.out.println("Ok, maybe you can order later. See you soon!.");
@@ -224,5 +229,6 @@ public class Order {
         }
 
 
+        order.printListOrder();
     }
 }
