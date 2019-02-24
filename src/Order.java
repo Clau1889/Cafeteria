@@ -40,6 +40,7 @@ public class Order {
             if (kindOfBeverage.equals("coffee")) {
                 System.out.println("What kind of coffee do you prefer?  \tEnter: ESPRESSO, AMERICANO, LATTE or CAPUCCINO");
                 String type = sc.next().toUpperCase();
+                coffee.setNameBeverage(kindOfBeverage);
 
                 if (type.equals("ESPRESSO") || type.equals("AMERICANO") || type.equals("LATTE") || type.equals("CAPUCCINO")) {
                     coffee.setTypeCoffe(Coffee.Type.valueOf(type));
@@ -183,12 +184,17 @@ public class Order {
             }
 
 
+            System.out.println("Anything else?");
+            Boolean addMoreBeverages= sc.nextBoolean();
+
 
         //CLIENT IS NOT READY TO ORDER A BEVERAGE
         } else {
             System.out.println("Ok, maybe you can order later. See you soon!.");
 
         }
+
+
 
     }
 }
