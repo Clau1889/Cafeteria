@@ -38,8 +38,8 @@ public class Frapuccino extends  Beverage{
     @Override
     public String toString() {
 
-        return "\nName: " +  getNameBeverage() + "\nType: " + type + "\nWith whip Cream: " + addWhipCream +  "\nType of milk: " + getTypeMilk() +
-                "\nSize: " + getSizeBeverage() + "\nPrice: " + getPriceBeverage() + "\n";
+        return "\nName: " +  getNameBeverage() + "\nType: " + type + "\nWith whipCream: " + addWhipCream +  "\nType of milk: " + getTypeMilk() +
+                "\nSize: " + getSizeBeverage() + "\nPrice: $" + getPriceBeverage() + "\n";
     }
 
 
