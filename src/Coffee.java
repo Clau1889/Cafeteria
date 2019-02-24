@@ -39,7 +39,7 @@ public class Coffee extends Beverage {
     @Override
     public String toString() {
         return "\nName: " +  getNameBeverage() + "\nType: " + typeCoffe + "\nDecaf :" + decaf +  "\nType of milk: " + getTypeMilk() +
-                "\nSize: " + getSizeBeverage() + "\nPrice: " + getPriceBeverage() + "\n";
+                "\nSize: " + getSizeBeverage() + "\nPrice: $" + getPriceBeverage() + "\n";
     }
 
 
