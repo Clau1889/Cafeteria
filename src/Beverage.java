@@ -17,7 +17,7 @@ public class Beverage extends Order{
 
 
     public String getNameBeverage() { return nameBeverage; }
-    public void setNameBeverage(String nameBeverage) { this.nameBeverage = nameBeverage;
+    public void setNameBeverage(String nameBeverage) {
 
         switch (nameBeverage.toLowerCase()){
             case "coffee":
@@ -32,8 +32,6 @@ public class Beverage extends Order{
                 this.nameBeverage=  nameBeverage;
                 break;
 
-            default:
-                System.out.println("Sorry, this beverage is unavailable.");
         }
     }
 
@@ -64,22 +62,7 @@ public class Beverage extends Order{
 
 
     public Double getPriceBeverage() { return priceBeverage; }
-    public void setPriceBeverage(Double priceBeverage) {
-        this.priceBeverage = priceBeverage;
-
-        for(Size sizes: Size.values()){
-
-            if(sizes.equals(Size.SMALL)){
-                setPriceBeverage(35.00);
-            }else if (sizes.equals(Size.MEDIUM)){
-                setPriceBeverage(45.00);
-            }else if (sizes.equals(Size.LARGE)){
-                setPriceBeverage(55.00);
-            }else {
-                System.out.println("This size is unavailable.");
-            }
-        }
-    }
+    public void setPriceBeverage(Double priceBeverage) { this.priceBeverage= priceBeverage; }
 
 
     public Boolean getWithMilk() { return withMilk;  }
@@ -99,11 +82,9 @@ public class Beverage extends Order{
             case SOJA:
                 this.typeMilk= typeMilk;
                 break;
-
-            default:
-                this.typeMilk= null;
         }
     }
+
 
 
 
