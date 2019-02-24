@@ -37,7 +37,7 @@ public class Tea extends Beverage {
     public String toString() {
 
         return "\nName: " +  getNameBeverage() + "\nType: " + type + "\nType of Milk :" + getTypeMilk() +
-                "\nSize: " + getSizeBeverage() + "\nPrice: " + getPriceBeverage() + "\n";
+                "\nSize: " + getSizeBeverage() + "\nPrice: $" + getPriceBeverage() + "\n";
     }
 
     public Tea(){}
