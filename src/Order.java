@@ -16,36 +16,7 @@ public class Order {
 
     }
 
-    public static void main(String[]args){
-
-        System.out.println("    \t     Welcome at Claudia´s Cafeteria" + "\nOur mission is give you a piece of happiness to start well your day. ");
-        System.out.println(
-                "\n\t              ________________________" +
-                "\n\t            ||   Claudia´s Cafeteria  ||"  +
-
-                " \n ________________________|_|___________________________" +
-                "\n  |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|| " +
-                "  \n|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|| /| " +
-                " \n|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_||/|| " +
-                " \n|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|||/| "+
-                " \n|_|_|_|_|_|_|_|_|_|     _      _     |_|_|_|_|_|_|_|_|_|_|/|| "+
-                " \n|_|               |    (_)    (_)    |                 | ||/| "+
-                " \n|_|               |_|      ||      |_|                 |_|/|| "+
-                " \n|_|               |_| pull || push |_|                 |_||/| "+
-                " \n|_|               |_|      ||      |_|                 |_|/|| "+
-                " \n|_|               |_|     [||]     |_|                 |_||/| "+
-                " \n|_|               |_|      ||      |_|                 |_|/|| "+
-                " \n|_|______         |_|      ||      |_|_____   _________|_||/| "+
-                " \n|_|_|_|_|_|_|_|_|_|_|______||______|_|_|_|_|_|_|_|_|_|_|_|/|| "+
-                "\n__|_|_|_|_|_|_|_|_|_|_|______||______|_|_|_|_|_|_|_|_|_|_|_||/______ "+
-                "\n /     /     /     /     /     /     /     /     /     /     /     /   "+
-                "\n/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/    "+
-                "\n_________________________________________________________________      "
-
-                );
-
-
-        Order order = new Order();
+    public void addBeverage(){
         Beverage beverage= new Beverage();
         Coffee coffee= new Coffee();
         Tea tea= new Tea();
@@ -57,7 +28,6 @@ public class Order {
         System.out.println("\nHi, My name is Claudia and I´ll take your order.  Are you ready to order? \n(Please enter true if is YES, or false if is NO).");
         Boolean readyToOrder= sc.nextBoolean();
 
-
         if(readyToOrder) {
             System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: Coffee,  Tea or Frapuccino.");
             String kindOfBeverage = sc.next().toLowerCase();
@@ -67,158 +37,150 @@ public class Order {
              *                            COFEE                                   *
              **********************************************************************/
 
-            if(kindOfBeverage.equals("coffee")){
+            if (kindOfBeverage.equals("coffee")) {
                 System.out.println("What kind of coffee do you prefer?  \tEnter: ESPRESSO, AMERICANO, LATTE or CAPUCCINO");
-                String type= sc.next().toUpperCase();
+                String type = sc.next().toUpperCase();
 
-                if(type.equals("ESPRESSO") || type.equals("AMERICANO") || type.equals("LATTE") || type.equals("CAPUCCINO") ){
+                if (type.equals("ESPRESSO") || type.equals("AMERICANO") || type.equals("LATTE") || type.equals("CAPUCCINO")) {
                     coffee.setTypeCoffe(Coffee.Type.valueOf(type));
 
-                    System.out.println("Do you prefer it decaf? \tEnter: True for yes or False for not." );
-                    Boolean decaf= sc.nextBoolean();
+                    System.out.println("Do you prefer it decaf? \tEnter: True for yes or False for not.");
+                    Boolean decaf = sc.nextBoolean();
                     coffee.setDecaf(decaf);
 
-                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not." );
-                    Boolean withMilk= sc.nextBoolean();
+                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not.");
+                    Boolean withMilk = sc.nextBoolean();
 
-                        if(withMilk){
-                            coffee.setWithMilk(withMilk);
+                    if (withMilk) {
+                        coffee.setWithMilk(withMilk);
 
-                            System.out.println("What kind of milk do you prefer? \tEnter:  WHOLE, LIGHT, SOJA");
-                            String kindOfMilk= sc.next().toUpperCase();
-                            coffee.setTypeMilk(Beverage.TypeMilk.valueOf(kindOfMilk));
-                        }else{
-                            coffee.setWithMilk(withMilk);
-                        }
+                        System.out.println("What kind of milk do you prefer? \tEnter:  WHOLE, LIGHT, SOJA");
+                        String kindOfMilk = sc.next().toUpperCase();
+                        coffee.setTypeMilk(Beverage.TypeMilk.valueOf(kindOfMilk));
+                    } else {
+                        coffee.setWithMilk(withMilk);
+                    }
 
                     System.out.println("What size? \tENTER: Small, Medium or Large");
-                    String size= sc.next().toUpperCase();
+                    String size = sc.next().toUpperCase();
                     coffee.setSizeBeverage(Beverage.Size.valueOf(size));
-                        if(size.equals("SMALL")){
-                           coffee.setPriceBeverage(35.00);
+                    if (size.equals("SMALL")) {
+                        coffee.setPriceBeverage(35.00);
 
-                        }else if(size.equals("MEDIUM")){
-                            coffee.setPriceBeverage(45.00);
+                    } else if (size.equals("MEDIUM")) {
+                        coffee.setPriceBeverage(45.00);
 
-                        }else if(size.equals("LARGE")){
-                            coffee.setPriceBeverage(55.00);
-                        }
+                    } else if (size.equals("LARGE")) {
+                        coffee.setPriceBeverage(55.00);
+                    }
 
                     listBeverages.add(coffee);
 
-                }else{
+                } else {
                     System.out.println("Sorry, this kind of Coffee is unavailable.");
                 }
-
-
 
 
                 /**********************************************************************
                  *                              TEA                                   *
                  **********************************************************************/
 
-            }else if(kindOfBeverage.equals("tea")){
+            } else if (kindOfBeverage.equals("tea")) {
                 System.out.println("What type of tea do you prefer?  \tEnter: GREEN, BLACK, CHAI, CHAMOMILE");
-                String type= sc.next().toUpperCase();
+                String type = sc.next().toUpperCase();
+                tea.setNameBeverage(kindOfBeverage);
 
-                if(type.equals("GREEN") || type.equals("BLACK") || type.equals("CHAI") || type.equals("CHAMOMILE")){
+                if (type.equals("GREEN") || type.equals("BLACK") || type.equals("CHAI") || type.equals("CHAMOMILE")) {
                     tea.setType(Tea.TypeTea.valueOf(type));
 
-                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not." );
-                    Boolean withMilk= sc.nextBoolean();
+                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not.");
+                    Boolean withMilk = sc.nextBoolean();
 
-                    if(withMilk){
+                    if (withMilk) {
                         tea.setWithMilk(withMilk);
 
-                        System.out.println("What kind of milk do you prefer? \tEnter:  WHOLE, LIGHT, SOJA" );
-                        String kindOfMilk= sc.next().toUpperCase();
+                        System.out.println("What kind of milk do you prefer? \tEnter:  WHOLE, LIGHT, SOJA");
+                        String kindOfMilk = sc.next().toUpperCase();
                         tea.setTypeMilk(Beverage.TypeMilk.valueOf(kindOfMilk));
 
-                    }else{
+                    } else {
                         tea.setWithMilk(withMilk);
                     }
 
                     System.out.println("What size? \tENTER: Small, Medium or Large");
-                    String size= sc.next().toUpperCase();
+                    String size = sc.next().toUpperCase();
                     tea.setSizeBeverage(Beverage.Size.valueOf(size));
-                        if(size.equals("SMALL")){
-                            tea.setPriceBeverage(22.00);
+                    if (size.equals("SMALL")) {
+                        tea.setPriceBeverage(22.00);
 
-                        }else if(size.equals("MEDIUM")){
-                           tea.setPriceBeverage(30.00);
+                    } else if (size.equals("MEDIUM")) {
+                        tea.setPriceBeverage(30.00);
 
-                        }else if(size.equals("LARGE")){
-                            tea.setPriceBeverage(38.00);
-                        }
+                    } else if (size.equals("LARGE")) {
+                        tea.setPriceBeverage(38.00);
+                    }
 
                     listBeverages.add(tea);
 
-                }else {
+                } else {
                     System.out.println("Sorry, this kind of Tea is unavailable.");
                 }
-
-
-
 
 
                 /**********************************************************************
                  *                        FRAPUCCINO                                  *
                  **********************************************************************/
 
-            }else if(kindOfBeverage.equals("frapuccino")){
+            } else if (kindOfBeverage.equals("frapuccino")) {
                 System.out.println("What type of frapuccino do you prefer?  \tEnter: CARAMEL, JAVA, MOCCA");
-                String type= sc.next().toUpperCase();
+                String type = sc.next().toUpperCase();
+                frapuccino.setNameBeverage(kindOfBeverage);
 
-                if(type.equals("CARAMEL") || type.equals("JAVA") || type.equals("MOCCA")){
+                if (type.equals("CARAMEL") || type.equals("JAVA") || type.equals("MOCCA")) {
                     frapuccino.setType(Frapuccino.TypeFrapuccino.valueOf(type));
 
-                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not." );
-                    Boolean withMilk= sc.nextBoolean();
+                    System.out.println("Would you like with milk? \tEnter: True for yes or False for not.");
+                    Boolean withMilk = sc.nextBoolean();
 
-                    if(withMilk){
+                    if (withMilk) {
                         frapuccino.setWithMilk(withMilk);
 
                         System.out.println("What kind of milk do you prefer? \tEnter:  WHOLE, LIGHT, SOJA");
-                        String kindOfMilk= sc.next().toUpperCase();
+                        String kindOfMilk = sc.next().toUpperCase();
                         frapuccino.setTypeMilk(Beverage.TypeMilk.valueOf(kindOfMilk));
 
-                    }else{
+                    } else {
                         frapuccino.setWithMilk(withMilk);
                     }
 
                     System.out.println("Would you like whip Cream? \tEnter: True for yes or False for not.");
-                    Boolean withWhipCream= sc.nextBoolean();
+                    Boolean withWhipCream = sc.nextBoolean();
                     frapuccino.setAddWhipCream(withWhipCream);
 
                     System.out.println("What size? \tENTER: Small, Medium or Large");
-                    String size= sc.next().toUpperCase();
+                    String size = sc.next().toUpperCase();
                     frapuccino.setSizeBeverage(Beverage.Size.valueOf(size));
-                    if(size.equals("SMALL")){
+                    if (size.equals("SMALL")) {
                         frapuccino.setPriceBeverage(47.00);
 
-                    }else if(size.equals("MEDIUM")){
+                    } else if (size.equals("MEDIUM")) {
                         frapuccino.setPriceBeverage(55.00);
 
-                    }else if(size.equals("LARGE")){
+                    } else if (size.equals("LARGE")) {
                         frapuccino.setPriceBeverage(63.00);
                     }
 
                     listBeverages.add(frapuccino);
 
-                }else {
+                } else {
                     System.out.println("Sorry, this kind of Frapuccino is unavailable.");
                 }
 
 
-
-             //THE BEVERAGE ENTERED DOES NOT EXIST.
-            }else{
+                //THE BEVERAGE ENTERED DOES NOT EXIST.
+            } else {
                 System.out.println("This type of beverage is not available already.");
             }
-
-
-
-
 
 
 
@@ -228,7 +190,5 @@ public class Order {
 
         }
 
-
-        order.printListOrder();
     }
 }
