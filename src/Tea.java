@@ -9,25 +9,10 @@ public class Tea extends Beverage {
 
     public TypeTea getType() { return type; }
     public void setType(TypeTea type) {
-        switch (type){
-            case GREEN:
-                this.type= type;
-                break;
-
-            case BLACK:
-                this.type= type;
-                break;
-
-            case CHAI:
-                this.type= type;
-                break;
-
-            case CHAMOMILE:
-                this.type= type;
-                break;
-
-            default:
-                System.out.println("Sorry, this type of tea is unavailable.");
+        if(type.equals("GREEN") || type.equals("BLACK") || type.equals("CHAI") || type.equals("CHAMOMILE")){
+            this.type= type;
+        }else{
+            System.out.println("Sorry, this type of tea is unavailable.");
         }
     }
 
