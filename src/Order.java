@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
-public class Order {
+public class Order{
     private static List<Beverage> listBeverages= new ArrayList<Beverage>();
 
     public List<Beverage> getListBeverages() { return listBeverages; }
@@ -15,20 +15,18 @@ public class Order {
         }
 
     }
+    
 
-    public void addBeverage(){
+
+    public Boolean addBeverage(){
         Beverage beverage= new Beverage();
         Coffee coffee= new Coffee();
         Tea tea= new Tea();
         Frapuccino frapuccino= new Frapuccino();
 
+        Scanner sc= new Scanner(System.in);
 
         //Questions to order....
-        Scanner sc= new Scanner(System.in);
-        System.out.println("\nHi, My name is Claudia and I´ll take your order.  Are you ready to order? \n(Please enter true if is YES, or false if is NO).");
-        Boolean readyToOrder= sc.nextBoolean();
-
-        if(readyToOrder) {
             System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: Coffee,  Tea or Frapuccino.");
             String kindOfBeverage = sc.next().toLowerCase();
             beverage.setNameBeverage(kindOfBeverage);
@@ -186,15 +184,11 @@ public class Order {
 
             System.out.println("Anything else?");
             Boolean addMoreBeverages= sc.nextBoolean();
-
-
-        //CLIENT IS NOT READY TO ORDER A BEVERAGE
-        } else {
-            System.out.println("Ok, maybe you can order later. See you soon!.");
-
-        }
-
-
+            if(addMoreBeverages){
+                return true;
+            }else{
+                return false;
+            }
 
     }
 }
