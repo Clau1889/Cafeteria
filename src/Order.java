@@ -131,7 +131,7 @@ public class Order{
                  **********************************************************************/
 
             } else if (kindOfBeverage.equals("frapuccino")) {
-                System.out.println("What type of frapuccino do you prefer?  \tEnter: CARAMEL, JAVA, MOCCA");
+                System.out.println("What type of frapuccino do you prefer?  \tEnter: CARAMEL, CHIP, MOCCA");
                 String type = sc.next().toUpperCase();
                 frapuccino.setNameBeverage(kindOfBeverage);
 
