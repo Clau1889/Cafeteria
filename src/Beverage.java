@@ -1,4 +1,4 @@
-public class Beverage extends Order{
+public class Beverage{
     private String nameBeverage;
     private Size sizeBeverage;
     private Double priceBeverage;
@@ -19,43 +19,23 @@ public class Beverage extends Order{
     public String getNameBeverage() { return nameBeverage; }
     public void setNameBeverage(String nameBeverage) {
 
-        switch (nameBeverage.toLowerCase()){
-            case "coffee":
-                this.nameBeverage= nameBeverage;
-                break;
+        if(nameBeverage.toLowerCase().equals("coffee") || nameBeverage.toLowerCase().equals("tea") || nameBeverage.toLowerCase().equals("frapuccino")){
 
-            case "tea":
-                this.nameBeverage= nameBeverage;
-                break;
-
-            case "frapuccino":
-                this.nameBeverage=  nameBeverage;
-                break;
-
+            this.nameBeverage= nameBeverage;
         }
+
     }
 
 
 
     public Size getSizeBeverage() { return sizeBeverage; }
     public void setSizeBeverage(Size sizeBeverage) {
-
-        switch (sizeBeverage){
-            case SMALL:
-                this.sizeBeverage= sizeBeverage;
-                break;
-
-            case MEDIUM:
-                this.sizeBeverage= sizeBeverage;
-                break;
-
-            case LARGE:
-                this.sizeBeverage= sizeBeverage;
-                break;
-
-            default:
-                System.out.println("Sorry, this size is unavailable.");
+        if(sizeBeverage.equals("SMALL") || sizeBeverage.equals("MEDIUM") || sizeBeverage.equals("LARGE")){
+            this.sizeBeverage= sizeBeverage;
+        } else{
+            System.out.println("Sorry, this size is unavailable.");
         }
+
     }
 
 
@@ -70,18 +50,8 @@ public class Beverage extends Order{
 
     public TypeMilk getTypeMilk() { return typeMilk; }
     public void setTypeMilk(TypeMilk typeMilk) {
-        switch (typeMilk){
-            case WHOLE:
-                this.typeMilk= typeMilk;
-                break;
-
-            case LIGHT:
-                this.typeMilk= typeMilk;
-                break;
-
-            case SOJA:
-                this.typeMilk= typeMilk;
-                break;
+        if(typeMilk.equals("WHOLE") || typeMilk.equals("LIGHT") || typeMilk.equals("SOJA")){
+            this.typeMilk= typeMilk;
         }
     }
 
