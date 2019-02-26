@@ -10,24 +10,12 @@ public class Coffee extends Beverage {
 
     public Type getTypeCoffe() { return typeCoffe; }
     public void setTypeCoffe(Type typeCoffe) {
-        switch (typeCoffe){
-            case ESPRESSO:
-                this.typeCoffe= typeCoffe;
-                break;
-
-            case AMERICANO:
-                this.typeCoffe= typeCoffe;
-                break;
-
-            case LATTE:
-                this.typeCoffe= typeCoffe;
-                break;
-
-            case CAPUCCINO:
-                this.typeCoffe= typeCoffe;
-                break;
-
+        if(typeCoffe.equals("ESPRESSO") || typeCoffe.equals("AMERICANO") || typeCoffe.equals("LATTE") || typeCoffe.equals("CAPUCCINO")){
+            this.typeCoffe= typeCoffe;
+        }else{
+            System.out.println("Sorry, this type of coffee is unavailable.");
         }
+
     }
 
     public Boolean getDecaf() { return decaf; }
