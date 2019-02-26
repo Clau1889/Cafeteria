@@ -30,7 +30,7 @@ public class Beverage{
 
     public Size getSizeBeverage() { return sizeBeverage; }
     public void setSizeBeverage(Size sizeBeverage) {
-        if(sizeBeverage.equals("SMALL") || sizeBeverage.equals("MEDIUM") || sizeBeverage.equals("LARGE")){
+        if(sizeBeverage.equals(Size.valueOf("SMALL")) || sizeBeverage.equals(Size.valueOf("MEDIUM")) || sizeBeverage.equals(Size.valueOf("LARGE"))){
             this.sizeBeverage= sizeBeverage;
         } else{
             System.out.println("Sorry, this size is unavailable.");
@@ -50,7 +50,7 @@ public class Beverage{
 
     public TypeMilk getTypeMilk() { return typeMilk; }
     public void setTypeMilk(TypeMilk typeMilk) {
-        if(typeMilk.equals("WHOLE") || typeMilk.equals("LIGHT") || typeMilk.equals("SOJA")){
+        if(typeMilk.equals(TypeMilk.valueOf("WHOLE")) || typeMilk.equals(TypeMilk.valueOf("LIGHT")) || typeMilk.equals(TypeMilk.valueOf("SOJA"))){
             this.typeMilk= typeMilk;
         }
     }
