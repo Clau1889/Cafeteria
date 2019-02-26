@@ -9,8 +9,10 @@ public class Tea extends Beverage {
 
     public TypeTea getType() { return type; }
     public void setType(TypeTea type) {
-        if(type.equals("GREEN") || type.equals("BLACK") || type.equals("CHAI") || type.equals("CHAMOMILE")){
+        if(type.equals(TypeTea.valueOf("GREEN")) || type.equals(TypeTea.valueOf("BLACK")) || type.equals(TypeTea.valueOf("CHAI"))
+                || type.equals(TypeTea.valueOf("CHAMOMILE"))){
             this.type= type;
+
         }else{
             System.out.println("Sorry, this type of tea is unavailable.");
         }

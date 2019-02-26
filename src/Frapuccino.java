@@ -3,13 +3,15 @@ public class Frapuccino extends  Beverage{
     private Boolean addWhipCream;
 
     public enum TypeFrapuccino{
-        CARAMEL, JAVA, MOCCA
+        CARAMEL, CHIP, MOCCA
     }
 
     public TypeFrapuccino getType() { return type; }
     public void setType(TypeFrapuccino type) {
-        if(type.equals("CARAMEL") || type.equals("CHIP") || type.equals("MOCCA") ){
+
+        if(type.equals(TypeFrapuccino.valueOf("CARAMEL")) || type.equals(TypeFrapuccino.valueOf("CHIP")) || type.equals(TypeFrapuccino.valueOf("MOCCA"))){
             this.type= type;
+
         }else {
             System.out.println("Sorry, this type of Frappccino is unavailable.");
         }

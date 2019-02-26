@@ -10,7 +10,7 @@ public class Coffee extends Beverage {
 
     public Type getTypeCoffe() { return typeCoffe; }
     public void setTypeCoffe(Type typeCoffe) {
-        if(typeCoffe.equals("ESPRESSO") || typeCoffe.equals("AMERICANO") || typeCoffe.equals("LATTE") || typeCoffe.equals("CAPUCCINO")){
+        if(typeCoffe.equals(Type.valueOf("ESPRESSO")) || typeCoffe.equals(Type.valueOf("AMERICANO")) || typeCoffe.equals(Type.valueOf("LATTE")) || typeCoffe.equals(Type.valueOf("CAPUCCINO"))){
             this.typeCoffe= typeCoffe;
         }else{
             System.out.println("Sorry, this type of coffee is unavailable.");
