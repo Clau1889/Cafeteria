@@ -8,21 +8,10 @@ public class Frapuccino extends  Beverage{
 
     public TypeFrapuccino getType() { return type; }
     public void setType(TypeFrapuccino type) {
-        switch (type){
-            case CARAMEL:
-                this.type= type;
-                break;
-
-            case JAVA:
-                this.type= type;
-                break;
-
-            case MOCCA:
-                this.type= type;
-                break;
-
-            default:
-                System.out.println("Sorry, this type of Frappccino is unavailable.");
+        if(type.equals("CARAMEL") || type.equals("CHIP") || type.equals("MOCCA") ){
+            this.type= type;
+        }else {
+            System.out.println("Sorry, this type of Frappccino is unavailable.");
         }
     }
 
