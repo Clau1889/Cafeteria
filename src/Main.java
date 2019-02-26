@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[]args){
 
         System.out.println("    \t     Welcome at Claudia´s Cafeteria" + "\nOur mission is give you a piece of happiness to start well your day. ");
@@ -29,15 +30,26 @@ public class Main {
 
         );
 
+        System.out.println("\nHi, My name is Claudia and I´ll take your order.");
+        Scanner sc = new Scanner(System.in);
         Order order= new Order();
-        order.addBeverage();
+        Boolean flagCondition= true;
+
+        System.out.println("\nAre you ready to order?. \tEnter true to YES, false to no.");
+        Boolean readyToOrder= sc.nextBoolean();
+
+        if(readyToOrder) {
+            do {
+                flagCondition = order.addBeverage();
+
+            } while (flagCondition);
+        }else{
+            System.out.println("Ok, maybe you can order later. See you soon!.");
+        }
+
         order.printListOrder();
 
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Anything else?");
-        Boolean addMoreBeverages= sc.nextBoolean();
 
-        
 
     }
 }
