@@ -11,7 +11,7 @@ public class Order{
     public void printListOrder(){
 
         for(Beverage listOrder: getListBeverages()){
-            System.out.println(listOrder.toString());
+            System.out.println(listOrder);
         }
 
     }
@@ -29,16 +29,17 @@ public class Order{
         //Questions to order....
             System.out.println("What kind of Beverage(s) would you prefer?  \tEnter: Coffee,  Tea or Frapuccino.");
             String kindOfBeverage = sc.next().toLowerCase();
-            beverage.setNameBeverage(kindOfBeverage);
+
 
             /**********************************************************************
              *                            COFEE                                   *
              **********************************************************************/
 
             if (kindOfBeverage.equals("coffee")) {
+                coffee.setNameBeverage(kindOfBeverage);
                 System.out.println("What kind of coffee do you prefer?  \tEnter: ESPRESSO, AMERICANO, LATTE or CAPUCCINO");
                 String type = sc.next().toUpperCase();
-                coffee.setNameBeverage(kindOfBeverage);
+
 
                 if (type.equals("ESPRESSO") || type.equals("AMERICANO") || type.equals("LATTE") || type.equals("CAPUCCINO")) {
                     coffee.setTypeCoffe(Coffee.Type.valueOf(type));
@@ -135,7 +136,7 @@ public class Order{
                 String type = sc.next().toUpperCase();
                 frapuccino.setNameBeverage(kindOfBeverage);
 
-                if (type.equals("CARAMEL") || type.equals("JAVA") || type.equals("MOCCA")) {
+                if (type.equals("CARAMEL") || type.equals("CHIP") || type.equals("MOCCA")) {
                     frapuccino.setType(Frapuccino.TypeFrapuccino.valueOf(type));
 
                     System.out.println("Would you like with milk? \tEnter: True for yes or False for not.");
@@ -159,6 +160,7 @@ public class Order{
                     System.out.println("What size? \tENTER: Small, Medium or Large");
                     String size = sc.next().toUpperCase();
                     frapuccino.setSizeBeverage(Beverage.Size.valueOf(size));
+
                     if (size.equals("SMALL")) {
                         frapuccino.setPriceBeverage(47.00);
 
@@ -182,7 +184,7 @@ public class Order{
             }
 
 
-            System.out.println("Anything else?");
+            System.out.println("\nAnything else? \tEnter: True for yes or False for not.");
             Boolean addMoreBeverages= sc.nextBoolean();
             if(addMoreBeverages){
                 return true;
